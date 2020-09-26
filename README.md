@@ -1,5 +1,5 @@
 # business-plan-template
-A business plan template
+A LaTeX business plan template
 
 add "-output-directory=output" to pdflatex options to build
 
