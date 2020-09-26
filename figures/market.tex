@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}
+\piechartthreed[scale=0.8,background color=white!50,mix color= darkgray]
+{40/green,60/blue,90/red,50/orange,120/yellow}
+\foreach \i in {1,...,5} { \fill (pc \i) circle (.5mm);}
+\draw[darkgray] (pc 1)  -- ++(4,0) coordinate (s1) node[anchor=south east] {Sector 1}
+node[anchor=north east] {11\%};
+\draw[darkgray] (pc 5)  -- (pc 5 -| s1) node[anchor=south east] {Sector 5}
+node[anchor=north east] {33\%}; 
+\draw[darkgray] (pc 2)  -- ++(1,1) coordinate (s2) -- (s2 -| s1) node[anchor=south east] {Sector 2}
+node[anchor=north east] {17\%}; 
+\draw[darkgray] (pc 3)  -- ++(-4,0) coordinate (s3) node[anchor=south west] {Sector 3}
+node[anchor=north west] {14\%};
+\draw[darkgray] (pc 4)  -- ++(-1,-1) coordinate (s4) --(s4 -| s3) node[anchor=south west] {Sector 4}
+node[anchor=north west] {25\%};
+\end{tikzpicture}

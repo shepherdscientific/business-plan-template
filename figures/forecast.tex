@@ -1,0 +1,42 @@
+\begin{tikzpicture}[
+   declare function={
+	barW=8pt; % width of bars
+	barShift=barW/2; % bar shift
+}
+]
+
+\begin{axis}[  
+	width = 0.4\paperwidth,
+    ybar,
+    y axis line style={white},
+	x axis line style={white},    
+    enlargelimits=0.25,
+    legend style={at={(0.4,-0.25)},anchor=north,legend columns=-1},
+    ylabel={\textdollaroldstyle},
+    symbolic x coords={2020, 2021, 2022},  
+    xtick=data,  
+    ]  
+	\addplot coordinates {(2020, 500000) (2021, 800000) (2022, 1500000)}; 
+	\addplot coordinates {(2020, 2000000) (2021, 6000000) (2022, 12000000)};  
+	\addplot coordinates {(2020, 0) (2021, 0) (2022, 0)};  
+	\legend{net profit \textdollaroldstyle, revenue \textdollaroldstyle, gross margin \%}  
+\end{axis}
+
+\begin{axis}[
+	width = 0.4\paperwidth,
+	ybar,
+    y axis line style={white},
+	x axis line style={white},
+	axis y line*=right, % move yaxis line to right side
+    enlargelimits=0.25,
+	xticklabels={}, % no labels on x-axis
+	ylabel=$^{\%}$,
+	tickwidth=0pt, % hides ticks
+	ymin=0,ymax=100,
+	grid=none % turn off grid
+	]
+	\addplot coordinates {(2020, 0) (2021, 0) (2022, 0)};  
+	\addplot coordinates {(2020, 0) (2021, 0) (2022, 0)};  
+	\addplot coordinates {(2020, 61) (2021, 55) (2022, 59)};
+\end{axis}
+\end{tikzpicture}  

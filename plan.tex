@@ -1,0 +1,61 @@
+\documentclass[10pt,twoside]{article}
+% include usepackages and command definitions
+\input{preamble/packages} 
+% set document wide variables
+\setCompanyName{Generic Company}
+\setCompanyFullName{\companyName{} INC.\textregistered}
+\setCompanyPhone{+1(0)000000000}
+\setAddress{1600 Pennsylvania Ave NW,\\ Washington DC 20500-0003,\\United States}
+\setYourName{Firstname Lastname}
+\setVersion{1.0}
+\setEmail{your.company@email.com}
+% watermark options
+\SetWatermarkAngle{60}
+\SetWatermarkScale{0.60}
+\SetWatermarkColor[RGB]{255,126,126}
+\setWatermarkOdd{\MakeUppercase{\companyName{}}}
+%\setWatermarkEven{CONFIDENTIAL}
+
+% header and footer styling
+\pagestyle{fancy}
+\fancyhf{}
+% - header style options
+%\fancyhead[LE,RO]{\yourName\\\companyPhone}
+%\fancyhead[RE,LO]{\companyFullName\\\companyEmail{}}
+\lhead{\yourName\\\companyPhone}
+\rhead{\companyFullName\\\companyEmail{}}
+% - footer style options
+\fancyfoot[LE,RO]{\thepage}
+% TOC depth settings
+%\setcounter{secnumdepth}{0}
+
+\begin{document}
+% uncomment line below to change graphic title page / comment to use maketitle
+\def\graphicTitlepage{}
+\ifx\graphicTitlepage\undefined
+	% maketitle title page
+	\title{\companyFullName{}
+	\\Business Plan\\\large{\version{}}\\\textsubscript{\textcopyright}2020}
+	\author{\yourName}
+	\maketitle
+\else 
+	% custom title page
+	\include{preamble/titlepage} 
+\fi
+
+\newpage
+\tableofcontents
+\include{preamble/confidentiality}
+\include{preamble/summary}
+\include{sections/chapter1}
+\include{sections/chapter2}
+\include{sections/chapter3}
+\include{sections/chapter4}
+\include{sections/chapter5}
+\include{sections/chapter6}
+%\input{addendum/etc}
+\begin{appendix}
+	\listoffigures
+	\listoftables
+\end{appendix}
+\end{document}
