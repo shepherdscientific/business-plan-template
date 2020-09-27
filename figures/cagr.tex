@@ -5,16 +5,16 @@
     ybar,
 	xticklabel style={rotate=45,anchor=east},,   
     bar width=15,
-    enlargelimits=0.2,
+	enlargelimits=0.1,
     legend style={at={(0.1,0.95)},anchor=north},
     ylabel={\textdollaroldstyle},
-    symbolic x coords={Lumber, Wood Composites, Cross Laminated Timber},  
+    symbolic x coords={Product 1, Product 2, Product 3},  
     xtick=data,  
     ]  
-	\addplot coordinates {(Lumber, 500000) (Wood Composites, 400000) (Cross Laminated Timber, 500000)}; 
-	\addplot coordinates {(Lumber, 2000000) (Wood Composites, 6000000) (Cross Laminated Timber, 8000000)};  
-	\addplot coordinates {(Lumber, 3000000) (Wood Composites, 7000000) (Cross Laminated Timber, 10000000)};  	
-	\addplot coordinates {(Lumber, 0) (Wood Composites, 0) (Cross Laminated Timber, 0)};  
+	\addplot coordinates {(Product 1, 500000) (Product 2, 400000) (Product 3, 500000)}; 
+	\addplot coordinates {(Product 1, 2000000) (Product 2, 6000000) (Product 3, 8000000)};  
+	\addplot coordinates {(Product 1, 3000000) (Product 2, 7000000) (Product 3, 10000000)};  	
+	\addplot coordinates {(Product 1, 0) (Product 2, 0) (Product 3, 0)};  
 	\legend{2018, 2021, 2024, CAGR\%}  
 \end{axis}
 
@@ -24,17 +24,17 @@
 	width = 0.8\paperwidth,
 	ybar,
 	axis y line*=right, % move yaxis line to right side
-    enlargelimits=0.2,
+    enlargelimits=0.1,
 	xticklabels={}, % no labels on x-axis
 	ylabel=$^{\%}$,
 	tickwidth=0pt, % hides ticks
 	ymin=0,ymax=100,
-    symbolic x coords={Lumber, Wood Composites, Cross Laminated Timber}, 
+    symbolic x coords={Product 1, Product 2, Product 3}, 
 	grid=none % turn off grid
 	]
-	\addplot coordinates {(Lumber, 0) (Wood Composites, 0) (Cross Laminated Timber, 0)};  
-	\addplot coordinates {(Lumber, 0) (Wood Composites, 0) (Cross Laminated Timber, 0)};  
-	\addplot coordinates {(Lumber, 0) (Wood Composites, 0) (Cross Laminated Timber, 0)}; 
-	\addplot coordinates {(Lumber, 61) (Wood Composites, 55) (Cross Laminated Timber, 59)};
+	\addplot coordinates {(Product 1, 0) (Product 2, 0) (Product 3, 0)};  
+	\addplot coordinates {(Product 1, 0) (Product 2, 0) (Product 3, 0)};  
+	\addplot coordinates {(Product 1, 0) (Product 2, 0) (Product 3, 0)}; 
+	\addplot coordinates {(Product 1, 61) (Product 2, 55) (Product 3, 59)};
 \end{axis}
 \end{tikzpicture}  
