@@ -15,7 +15,27 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: plan.pdf          
+          path: plan.pdf
+  convert_via_pandoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir output
+      - uses: docker://pandoc/core:2.9
+        with:
+          args: >-
+            -s plan.tex 
+            -f latex 
+            -t docx 
+            -o output/plan.docx 
+            #--bibliography reference_files/references.bib 
+            #--bibliography reference_files/R_citations.bib 
+            #--bibliography reference_files/additional_citations.bib 
+            #--csl nature-genetics.csl
+      - uses: actions/upload-artifact@master
+        with:
+          name: plan
+          path: output          
       #- name: Run a multi-line script
       #  run: |
       #    cp output/plan.pdf output/output.pdf
