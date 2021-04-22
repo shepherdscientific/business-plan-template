@@ -12,4 +12,9 @@ jobs:
         uses: xu-cheng/texlive-action/full@v1
         #- uses: xu-cheng/texlive-action/small@v1
         with:
-          root_file: plan.tex
+          #root_file: plan.tex
+          run: |
+            mkdir output
+            pdflatex -synctex=1 -interaction=nonstopmode  --output-directory output "plan".tex
+            #apk add make
+            #make
