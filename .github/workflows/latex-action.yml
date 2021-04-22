@@ -15,7 +15,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: artifacts/plan.pdf          
+          path: plan.pdf          
       #- name: Run a multi-line script
       #  run: |
       #    cp output/plan.pdf output/output.pdf
