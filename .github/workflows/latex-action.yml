@@ -31,7 +31,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: DOCX
-          path: plan.docx          
+          path: output/plan.docx          
       #- name: Run a multi-line script
       #  run: |
       #    cp output/plan.pdf output/output.pdf
