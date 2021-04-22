@@ -28,14 +28,10 @@ jobs:
             -f latex 
             -t docx 
             -o output/plan.docx 
-            #--bibliography reference_files/references.bib 
-            #--bibliography reference_files/R_citations.bib 
-            #--bibliography reference_files/additional_citations.bib 
-            #--csl nature-genetics.csl
       - uses: actions/upload-artifact@master
         with:
-          name: plan
-          path: output          
+          name: DOCX
+          path: plan.docx          
       #- name: Run a multi-line script
       #  run: |
       #    cp output/plan.pdf output/output.pdf
