@@ -14,7 +14,4 @@ jobs:
         with:
           #root_file: plan.tex
           run: |
-            mkdir output
             pdflatex -synctex=1 -interaction=nonstopmode  --output-directory output "plan".tex
-            #apk add make
-            #make
